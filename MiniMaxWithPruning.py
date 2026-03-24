@@ -16,17 +16,24 @@ class MinimaxTreeVisualizer:
     def __init__(self, root):
         self.root = root
         self.root.title("Alpha Beta Pruning Visualizer")
+        self.names_label = tk.Label(
+            root,
+            text="Developed by: Apoorwa Kumar, Afroz Hussain Shaik, Yug Agarwal",
+            font=("Arial", 12, "bold"),
+            fg="blue"
+        )
+        self.names_label.pack(pady=5)
         self.canvas_width = 800
         self.canvas_height = 600
         self.total_nodes = 0
         self.nodes = []
 
-        self.depth_label = tk.Label(root, text="Depth of Minimax Tree:")
+        self.depth_label = tk.Label(root, text="Depth of Tree:")
         self.depth_label.pack()
         self.depth_entry = tk.Entry(root)
         self.depth_entry.pack()
 
-        self.create_tree_button = tk.Button(root, text="Create Minimax Tree", command=self.create_tree)
+        self.create_tree_button = tk.Button(root, text="Create Alpha-Beta Pruning Tree", command=self.create_tree)
         self.create_tree_button.pack()
 
         self.assign_values_button = tk.Button(root, text="Assign Terminal Node Values", command=self.prompt_terminal_node_values)
